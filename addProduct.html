@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/myStyle.css">
+</head>
+
+<body>
+    <!--header section-->
+    <section id="productHeader">
+        <div class=" my-Container m-auto">
+            <nav class="navbar navbar-expand-lg text-dark navbar-light bg-light mb-5 p-3 marginTop">
+                <div class="container">
+                    <a class="navbar-brand myTextColor myText" href="index.html">Foto Enfoque Inventory sistem</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link activeLink" href="index.html">Inventario</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="#">Products</a>
+                            </li> -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="addProduct.html">Add Product</a>
+                            </li>
+                        </ul>
+                        <!-- <i class="fas fa-search"></i> -->
+                    </div>
+                </div>
+            </nav>
+            <!--add product section-->
+            <div class="col-md-8">
+                <!--alert to tell products added-->
+                <div id="successProductAlert" class="alert alert-warning" role="alert">
+                    Product added successfuly!
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="productName">Producto</label>
+                        <input onkeyup="disableBtn()" id='productName' type="text" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="productText">Descripcion de producto</label>
+                        <textarea onkeyup="disableBtn()" id='productDesc' class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="productImg">Imagen Producto</label>
+                            <div class="wrap">
+                                <div class="col">
+                                    <select onchange="imagen()" id="ProductType" >
+                                        <option value="Marco" data-image="#opt-1" selected> Marco</option>
+                                        <option value="Pila" data-image="#opt-2"> Pila</option>
+                                        <option value="Rollo Fotografico" data-image="#opt-3"> Rollo Fotografico</option>
+                                    </select>    
+                                </div>
+                                <div class="col" id="ProductImg">
+                                    <img src="images/cuadro1.jpg" id="opt-1" class="active">
+                                    <img src="images/pila.png" id="opt-2">
+                                    <img src="images/rollo.jpg" id="opt-3">
+                                </div>
+                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="productModel">Stock</label>
+                        <input onkeyup="disableBtn()" id='productStock' type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">Precio</label>
+                        <input onkeyup="disableBtn()" id='productPrice' type="text" class="form-control">
+                    </div>
+                </form>
+                <button id='productBtn' type="submit" class="btn btn-primary">Add product</button>
+            </div>
+            <!--end product section-->
+        </div>
+    </section>
+    <!--END header section-->
+    <!-- view product section-->
+    <section class="my-5">
+        <div class="container">
+            <h2 id="productHeadline" class="d-flex justify-content-center my-5">Inventario</h2>
+            <div id="searchItem" class="d-flex justify-content-center my-5">
+                <input type="text" placeholder="BUSCAR" class="form-control" id="mySearchInp">
+                <i class="fas fa-lg fa-search mySearch"></i>
+            </div>
+            <div class="row" id="dataRow">
+            </div>
+        </div>
+    </section>
+    <!--end of view product-->
+
+    <!--scripts-->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/myJs.js"></script>
+</body>
+
+</html>
